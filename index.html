@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agro Forte, Futuro Sustentável</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header class="header">
+        <h1>🌱 Agro Forte, Futuro Sustentável</h1>
+        <p>Equilíbrio entre produção e meio ambiente</p>
+    </header>
+
+    <main class="container">
+        <section class="article">
+            <h2>O Desafio do Agronegócio Moderno</h2>
+            <p>O agronegócio é fundamental para a economia brasileira, mas enfrenta um grande desafio: conciliar a produção em larga escala com a preservação do meio ambiente. A sustentabilidade não é mais uma opção, mas uma necessidade urgente para garantir a viabilidade econômica e ambiental das futuras gerações.</p>
+        </section>
+
+        <section class="article">
+            <h2>Práticas Sustentáveis que Transformam</h2>
+            <div class="practices-grid">
+                <div class="practice-card">
+                    <h3>🌾 Rotação de Culturas</h3>
+                    <p>Alternância de plantios mantém o solo fértil e reduz pragas naturalmente.</p>
+                </div>
+                <div class="practice-card">
+                    <h3>💧 Gestão de Água</h3>
+                    <p>Técnicas eficientes de irrigação economizam água e reduzem custos operacionais.</p>
+                </div>
+                <div class="practice-card">
+                    <h3>🌍 Redução de Carbono</h3>
+                    <p>Práticas agroecológicas diminuem emissões e melhoram a qualidade do solo.</p>
+                </div>
+                <div class="practice-card">
+                    <h3>🐝 Biodiversidade</h3>
+                    <p>Preservar áreas verdes atrai polinizadores e melhora a produtividade.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="article">
+            <h2>Sustentabilidade Gera Lucro</h2>
+            <p>Estudos mostram que propriedades rurais que adotam práticas sustentáveis têm maior rentabilidade a longo prazo. Redução de custos com insumos, melhor qualidade de produtos e acesso a mercados premium são alguns dos benefícios econômicos diretos.</p>
+            <p>Além disso, consumidores cada vez mais conscientes buscam produtos de origem sustentável, criando oportunidades de negócio diferenciadas.</p>
+        </section>
+
+        <section class="article">
+            <h2>Tecnologia a Serviço da Sustentabilidade</h2>
+            <p>A agricultura de precisão, drones, sensores e inteligência artificial permitem otimizar o uso de recursos naturais. Esses avanços tecnológicos possibilitam produzir mais com menos, respeitando os limites do planeta.</p>
+        </section>
+
+        <section class="article highlight">
+            <h2>Seu Papel na Transformação</h2>
+            <p>Cada decisão conta. Seja você um produtor rural, consumidor ou empresário do agronegócio, suas escolhas impactam o futuro. Adotar práticas sustentáveis é investir em um planeta mais saudável e um negócio mais lucrativo.</p>
+        </section>
+
+        <section class="games-section">
+            <h2>Aprenda Jogando</h2>
+            <p>Teste seus conhecimentos sobre agronegócio sustentável com nossos jogos interativos:</p>
+            
+            <div class="games-container">
+                <div class="game-card">
+                    <h3>🧠 Jogo da Memória Agro</h3>
+                    <p>Encontre pares de práticas sustentáveis. Teste sua memória e conhecimento!</p>
+                    <button class="btn-game" onclick="openMemoryGame()">Jogar Memória</button>
+                </div>
+                
+                <div class="game-card">
+                    <h3>🌱 Rotação de Culturas</h3>
+                    <p>Organize as culturas nas estações certas para manter o solo saudável.</p>
+                    <button class="btn-game" onclick="openRotationGame()">Jogar Rotação</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2025 Agro Forte, Futuro Sustentável. Projeto educativo sobre sustentabilidade no agronegócio.</p>
+    </footer>
+
+    <div id="memoryModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeMemoryGame()">&times;</span>
+            <h2>Jogo da Memória - Agro Sustentável</h2>
+            <div id="memoryGame" class="memory-game"></div>
+            <p id="memoryScore" class="score">Pontos: 0</p>
+            <button class="btn-reset" onclick="resetMemoryGame()">Reiniciar</button>
+        </div>
+    </div>
+
+    <div id="rotationModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeRotationGame()">&times;</span>
+            <h2>Rotação de Culturas</h2>
+            <div id="rotationGame" class="rotation-game"></div>
+            <p id="rotationScore" class="score">Pontos: 0</p>
+            <button class="btn-reset" onclick="resetRotationGame()">Reiniciar</button>
+        </div>
+    </div>
+
+    <script src="js/memory.js"></script>
+    <script src="js/rotation.js"></script>
+</body>
+</html>
