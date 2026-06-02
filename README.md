@@ -90,39 +90,6 @@ CSS3: Estilos responsivos com Grid e Flexbox
 •
 JavaScript Puro: Sem dependências externas
 
-📱 Responsividade
-
-O projeto é totalmente responsivo e funciona em:
-
-•
-Desktop (1200px+)
-
-•
-Tablet (768px - 1199px)
-
-•
-Mobile (até 767px)
-
-✨ Características
-
-•
-✅ Código simples e limpo
-
-•
-✅ Sem dependências externas
-
-•
-✅ Design minimalista e moderno
-
-•
-✅ Totalmente responsivo
-
-•
-✅ Acessível e semântico
-
-•
-✅ Jogos educativos interativos
-
 📝 Conteúdo do Site
 
 1.
@@ -160,30 +127,4 @@ Engajar através de gamificação
 
 •
 Promover reflexão sobre impacto ambiental
-
-📄 Licença
-
-Projeto educativo de código aberto.
-
-👨‍💻 Desenvolvido por
-
-Projeto desenvolvido seguindo as diretrizes da unidade "Start by Alura" com foco em:
-
-•
-Autoria e identidade visual coesa
-
-•
-Código HTML, CSS e JavaScript limpo e semântico
-
-•
-Acessibilidade web
-
-•
-Depuração e boas práticas
-
-•
-Organização e documentação profissional
-
-
-
 
