@@ -1,13 +1,85 @@
+
+
+Iniciar teste gratuito
+
+Compartilhar
+não precisa de informaçoes tecnicas, apenas um guia de uso sobre os jogos e etc, informaçoes apenas meu nome
+Lite
+Perfeito! Vou refazer o HTML com um guia de uso dos jogos, informações sobre sustentabilidade agrícola e apenas seus dados de contato. Deixa comigo!
+Preferência de complexidade de código e sugestões
+
+
+
+Lite
+Perfeito! ✅ Refiz o projeto com tudo que você pediu!
+✨ Principais mudanças:
+HTML (index.html)
+✅ Guia de uso dos jogos com instruções claras
+✅ Informações sobre sustentabilidade agrícola
+✅ Seção "Como Usar os Jogos" com 4 passos
+✅ Detalhes de cada jogo e dificuldade
+✅ Dicas para melhorar desempenho
+✅ Apenas seus dados de contato (nome + WhatsApp)
+✅ Sem informações técnicas do projeto
+CSS (styles.css)
+✅ Design moderno e chamativo
+✅ Cores vibrantes (verde, amarelo, laranja, azul)
+✅ Muitos efeitos visuais (animações, sombras, gradientes)
+✅ Cards e elementos bem trabalhados
+✅ Layout responsivo e limpo
+JavaScript (memory.js e rotation.js)
+✅ 3 níveis de dificuldade (Fácil, Médio, Difícil)
+✅ Fácil: 4 pares / 4 culturas
+✅ Médio: 6 pares / 6 culturas
+✅ Difícil: 8 pares / 8 culturas
+✅ Exibe o nível selecionado no jogo
+🎮 Como funciona:
+Clique em um nível de dificuldade
+Clique no botão do jogo
+Jogue e ganhe pontos!
+Tudo pronto para colocar no GitHub! 🚀
+index.html
+Código · 14.58 KB
+styles.css
+Código · 19.42 KB
+memory.js
+Código · 4.42 KB
+rotation.js
+Código · 5.21 KB
+Ver todos os arquivos nesta tarefa
+Tarefa concluída
+Como foi este resultado?
+Sugestões de acompanhamento
+const seasons = [
+    { name: 'Primavera', id: 'spring' },
+    { name: 'Verão', id: 'summer' },
+    { name: 'Outono', id: 'autumn' },
+    { name: 'Inverno', id: 'winter' }
+];
+
+const allCrops = [
+    { name: 'Milho', season: 'spring', 
+
+
+GitHub
+
+Computadores na nuvem
+Novo
+
+styles.css
 :root {
-    --dark-green: #2d5016;
-    --medium-green: #4a7c2c;
-    --light-green: #7cb342;
-    --very-light-green: #c5e1a5;
-    --pastel-yellow: #f4e4a6;
+    --dark-green: #1b4d2e;
+    --medium-green: #2d7a3e;
+    --light-green: #52b788;
+    --very-light-green: #d8f3dc;
+    --pastel-yellow: #ffd60a;
+    --vibrant-yellow: #ffc300;
     --earth-brown: #8d6e63;
-    --light-gray: #f5f5f5;
+    --light-gray: #f8f9fa;
     --white: #ffffff;
-    --dark-text: #333333;
+    --dark-text: #1a1a1a;
+    --accent-blue: #0096ff;
+    --accent-orange: #ff6b35;
 }
 
 * {
@@ -24,68 +96,144 @@ body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.6;
     color: var(--dark-text);
-    background-color: var(--light-gray);
+    background: linear-gradient(135deg, #f0f9ff 0%, #f0fdf4 100%);
+    min-height: 100vh;
 }
 
 .header {
-    background: linear-gradient(135deg, var(--dark-green) 0%, var(--medium-green) 100%);
+    background: linear-gradient(135deg, var(--dark-green) 0%, var(--medium-green) 50%, var(--light-green) 100%);
     color: var(--white);
-    padding: 3rem 1rem;
+    padding: 4rem 1rem;
     text-align: center;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    position: relative;
+    overflow: hidden;
 }
 
-.header h1 {
-    font-size: 2.5rem;
-    font-weight: bold;
+.header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at 20% 50%, rgba(255, 255, 255, 0.1) 0%, transparent 50%);
+    pointer-events: none;
+}
+
+.header-content {
+    position: relative;
+    z-index: 1;
+    animation: slideDown 0.8s ease;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.main-title {
+    font-size: 3rem;
+    font-weight: 900;
     margin-bottom: 0.5rem;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.3);
+    letter-spacing: 1px;
 }
 
-.header p {
-    font-size: 1.1rem;
+.tagline {
+    font-size: 1.3rem;
     font-style: italic;
     opacity: 0.95;
+    margin-bottom: 0.5rem;
+}
+
+.subtitle {
+    font-size: 1rem;
+    opacity: 0.9;
+    font-weight: 300;
 }
 
 .container {
-    max-width: 900px;
-    margin: 2rem auto;
+    max-width: 1000px;
+    margin: 3rem auto;
     padding: 0 1rem;
 }
 
 .article {
-    background-color: var(--white);
-    padding: 2rem;
-    margin-bottom: 2rem;
-    border-left: 5px solid var(--medium-green);
-    border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background: var(--white);
+    padding: 2.5rem;
+    margin-bottom: 2.5rem;
+    border-left: 6px solid var(--light-green);
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+    animation: fadeInUp 0.6s ease;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .article:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+}
+
+.article.featured {
+    border-left: 6px solid var(--pastel-yellow);
+    background: linear-gradient(135deg, var(--white) 0%, var(--very-light-green) 100%);
+}
+
+.article-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    flex-wrap: wrap;
+    gap: 1rem;
 }
 
 .article h2 {
     color: var(--dark-green);
-    font-size: 1.8rem;
+    font-size: 2rem;
     margin-bottom: 1rem;
-    border-bottom: 2px solid var(--pastel-yellow);
-    padding-bottom: 0.5rem;
+    border-bottom: 3px solid var(--pastel-yellow);
+    padding-bottom: 0.8rem;
+    display: inline-block;
+}
+
+.date {
+    background: var(--pastel-yellow);
+    color: var(--dark-green);
+    padding: 0.4rem 1rem;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
 }
 
 .article p {
     font-size: 1rem;
-    margin-bottom: 1rem;
+    margin-bottom: 1.2rem;
     text-align: justify;
     color: var(--dark-text);
+    line-height: 1.8;
 }
 
 .article.highlight {
-    background: linear-gradient(135deg, var(--pastel-yellow) 0%, var(--very-light-green) 100%);
+    background: linear-gradient(135deg, var(--pastel-yellow) 0%, var(--vibrant-yellow) 100%);
     border-left-color: var(--dark-green);
 }
 
@@ -93,133 +241,428 @@ body {
     color: var(--dark-green);
 }
 
+.section-intro {
+    font-size: 1.1rem;
+    color: var(--medium-green);
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+}
+
 .practices-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.8rem;
+    margin-top: 2rem;
+}
+
+.practice-card {
+    background: linear-gradient(135deg, var(--very-light-green) 0%, #e8f5e9 100%);
+    padding: 2rem;
+    border-radius: 12px;
+    text-align: center;
+    border: 3px solid var(--light-green);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.practice-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.3) 0%, transparent 50%);
+    pointer-events: none;
+}
+
+.practice-card:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 12px 30px rgba(45, 122, 62, 0.25);
+    border-color: var(--medium-green);
+}
+
+.practice-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    display: inline-block;
+    animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+.practice-card h3 {
+    color: var(--dark-green);
+    font-size: 1.3rem;
+    margin-bottom: 0.8rem;
+    font-weight: 700;
+}
+
+.practice-card p {
+    font-size: 0.95rem;
+    color: var(--dark-text);
+    margin: 0 0 1rem 0;
+}
+
+.practice-benefit {
+    background: var(--light-green);
+    color: var(--white);
+    padding: 0.6rem;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.content-box {
+    background: linear-gradient(135deg, var(--very-light-green) 0%, #f0fdf4 100%);
+    padding: 2rem;
+    border-radius: 12px;
+    border-left: 5px solid var(--light-green);
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1.5rem;
+    margin: 2rem 0;
+}
+
+.stat {
+    background: var(--white);
+    padding: 1.5rem;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+    border-top: 4px solid var(--light-green);
+}
+
+.stat-number {
+    font-size: 2rem;
+    font-weight: 900;
+    color: var(--light-green);
+    margin-bottom: 0.5rem;
+}
+
+.stat-label {
+    font-size: 0.9rem;
+    color: var(--dark-text);
+    font-weight: 600;
+}
+
+.games-guide {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 1.5rem;
     margin-top: 1.5rem;
 }
 
-.practice-card {
-    background: linear-gradient(135deg, var(--very-light-green) 0%, var(--pastel-yellow) 100%);
-    padding: 1.5rem;
-    border-radius: 8px;
+.guide-card {
+    background: linear-gradient(135deg, var(--accent-blue) 0%, var(--light-green) 100%);
+    color: var(--white);
+    padding: 2rem;
+    border-radius: 10px;
     text-align: center;
-    border: 2px solid var(--light-green);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    position: relative;
 }
 
-.practice-card:hover {
-    transform: scale(1.05);
-    box-shadow: 0 4px 12px rgba(74, 124, 44, 0.2);
-}
-
-.practice-card h3 {
+.guide-number {
+    position: absolute;
+    top: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 40px;
+    height: 40px;
+    background: var(--pastel-yellow);
     color: var(--dark-green);
-    font-size: 1.2rem;
-    margin-bottom: 0.5rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    font-weight: 900;
 }
 
-.practice-card p {
-    font-size: 0.95rem;
-    color: var(--dark-text);
+.guide-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.guide-card h4 {
+    font-size: 1.1rem;
+    margin-bottom: 0.8rem;
+    margin-top: 0.5rem;
+    font-weight: 700;
+}
+
+.guide-card p {
+    font-size: 0.9rem;
     margin: 0;
 }
 
-.games-section {
-    background-color: var(--white);
+.game-info {
+    background: linear-gradient(135deg, var(--very-light-green) 0%, #f0fdf4 100%);
     padding: 2rem;
-    margin-bottom: 2rem;
-    border-radius: 8px;
+    border-radius: 12px;
+    border-left: 5px solid var(--light-green);
+}
+
+.game-details {
+    background: var(--white);
+    padding: 1.5rem;
+    border-radius: 10px;
+    margin: 1.5rem 0;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.detail-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.8rem 0;
+    border-bottom: 1px solid var(--very-light-green);
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.detail-item:last-child {
+    border-bottom: none;
+}
+
+.detail-label {
+    font-weight: 700;
+    color: var(--dark-green);
+    min-width: 100px;
+}
+
+.tips-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.tip-card {
+    background: linear-gradient(135deg, var(--accent-orange) 0%, #ff8c42 100%);
+    color: var(--white);
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.tip-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.tip-card h4 {
+    font-size: 1.1rem;
+    margin-bottom: 0.8rem;
+    font-weight: 700;
+}
+
+.tip-card p {
+    font-size: 0.9rem;
+    margin: 0;
+}
+
+.action-box {
+    background: linear-gradient(135deg, var(--white) 0%, var(--very-light-green) 100%);
+    padding: 2rem;
+    border-radius: 12px;
+    border: 2px solid var(--light-green);
+}
+
+.action-items {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+.action-item {
+    background: var(--light-green);
+    color: var(--white);
+    padding: 1rem;
+    border-radius: 8px;
+    text-align: center;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.action-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.games-section {
+    background: var(--white);
+    padding: 3rem;
+    margin-bottom: 2.5rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
 }
 
 .games-section h2 {
     color: var(--dark-green);
-    font-size: 1.8rem;
+    font-size: 2rem;
     margin-bottom: 0.5rem;
-    border-bottom: 2px solid var(--pastel-yellow);
-    padding-bottom: 0.5rem;
+    border-bottom: 3px solid var(--pastel-yellow);
+    padding-bottom: 0.8rem;
+    display: inline-block;
 }
 
-.games-section > p {
+.games-intro {
     color: var(--dark-text);
-    margin-bottom: 1.5rem;
+    margin-bottom: 2rem;
+    font-size: 1.1rem;
+}
+
+.difficulty-selector {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+}
+
+.difficulty-btn {
+    padding: 0.8rem 1.5rem;
+    border: 2px solid var(--light-green);
+    background: var(--white);
+    color: var(--dark-green);
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s ease;
     font-size: 1rem;
+}
+
+.difficulty-btn:hover {
+    background: var(--light-green);
+    color: var(--white);
+    transform: scale(1.05);
+}
+
+.difficulty-btn.active {
+    background: var(--light-green);
+    color: var(--white);
+    box-shadow: 0 4px 12px rgba(82, 183, 136, 0.3);
 }
 
 .games-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 2rem;
-    margin-top: 1.5rem;
+    margin-top: 2rem;
 }
 
 .game-card {
     background: linear-gradient(135deg, var(--light-green) 0%, var(--medium-green) 100%);
     color: var(--white);
     padding: 2rem;
-    border-radius: 12px;
+    border-radius: 15px;
     text-align: center;
-    box-shadow: 0 4px 12px rgba(74, 124, 44, 0.3);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 8px 25px rgba(45, 122, 62, 0.3);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.game-card::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -50%;
+    width: 200px;
+    height: 200px;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+    animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% { transform: translate(0, 0); }
+    50% { transform: translate(20px, 20px); }
 }
 
 .game-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 6px 16px rgba(74, 124, 44, 0.4);
+    transform: translateY(-10px);
+    box-shadow: 0 12px 35px rgba(45, 122, 62, 0.4);
+}
+
+.game-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+    flex-wrap: wrap;
+    gap: 0.5rem;
 }
 
 .game-card h3 {
-    font-size: 1.4rem;
-    margin-bottom: 1rem;
+    font-size: 1.5rem;
+    margin: 0;
+    font-weight: 700;
+}
+
+.game-badge {
+    background: var(--pastel-yellow);
+    color: var(--dark-green);
+    padding: 0.4rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
 }
 
 .game-card p {
-    font-size: 0.95rem;
+    font-size: 1rem;
     margin-bottom: 1.5rem;
-    line-height: 1.5;
+    line-height: 1.6;
+}
+
+.game-features {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 1.5rem;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.game-features span {
+    background: rgba(255, 255, 255, 0.2);
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    font-weight: 600;
 }
 
 .btn-game {
-    background-color: var(--pastel-yellow);
+    background: var(--pastel-yellow);
     color: var(--dark-green);
     border: none;
-    padding: 0.8rem 1.5rem;
-    font-size: 1rem;
-    font-weight: bold;
-    border-radius: 6px;
+    padding: 1rem 2rem;
+    font-size: 1.1rem;
+    font-weight: 700;
+    border-radius: 8px;
     cursor: pointer;
     transition: all 0.3s ease;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    width: 100%;
 }
 
 .btn-game:hover {
-    background-color: var(--very-light-green);
+    background: var(--vibrant-yellow);
     transform: scale(1.05);
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
 }
 
 .btn-game:active {
     transform: scale(0.98);
-}
-
-.btn-reset {
-    background-color: var(--medium-green);
-    color: var(--white);
-    border: none;
-    padding: 0.8rem 1.5rem;
-    font-size: 0.95rem;
-    font-weight: bold;
-    border-radius: 6px;
-    cursor: pointer;
-    margin-top: 1rem;
-    transition: all 0.3s ease;
-}
-
-.btn-reset:hover {
-    background-color: var(--dark-green);
-    transform: scale(1.05);
 }
 
 .modal {
@@ -230,7 +673,7 @@ body {
     top: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.6);
     animation: fadeIn 0.3s ease;
 }
 
@@ -240,15 +683,15 @@ body {
 }
 
 .modal-content {
-    background-color: var(--white);
+    background: var(--white);
     margin: 5% auto;
-    padding: 2rem;
-    border-radius: 12px;
+    padding: 2.5rem;
+    border-radius: 15px;
     width: 90%;
-    max-width: 600px;
+    max-width: 650px;
     max-height: 85vh;
     overflow-y: auto;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
     animation: slideIn 0.3s ease;
 }
 
@@ -263,155 +706,264 @@ body {
     }
 }
 
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
 .modal-content h2 {
     color: var(--dark-green);
-    margin-bottom: 1.5rem;
-    border-bottom: 2px solid var(--pastel-yellow);
-    padding-bottom: 0.5rem;
+    margin: 0;
+    border-bottom: 3px solid var(--pastel-yellow);
+    padding-bottom: 0.8rem;
+    flex: 1;
+}
+
+.difficulty-display {
+    background: var(--pastel-yellow);
+    color: var(--dark-green);
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 0.9rem;
 }
 
 .close {
     color: var(--dark-text);
-    float: right;
     font-size: 2rem;
     font-weight: bold;
     cursor: pointer;
     transition: color 0.3s ease;
+    line-height: 1;
 }
 
 .close:hover {
-    color: var(--dark-green);
+    color: var(--light-green);
 }
 
 .memory-game {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 0.8rem;
-    margin: 1.5rem 0;
+    gap: 1rem;
+    margin: 2rem 0;
 }
 
 .memory-card {
     width: 100%;
     aspect-ratio: 1;
     background: linear-gradient(135deg, var(--light-green) 0%, var(--medium-green) 100%);
-    border: 2px solid var(--dark-green);
-    border-radius: 8px;
+    border: 3px solid var(--dark-green);
+    border-radius: 10px;
     cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 2rem;
+    font-size: 2.5rem;
     transition: all 0.3s ease;
     user-select: none;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    position: relative;
 }
 
 .memory-card:hover {
-    transform: scale(1.05);
+    transform: scale(1.08);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
 }
 
 .memory-card.flipped {
-    background: linear-gradient(135deg, var(--pastel-yellow) 0%, var(--very-light-green) 100%);
+    background: linear-gradient(135deg, var(--pastel-yellow) 0%, var(--vibrant-yellow) 100%);
     color: var(--dark-green);
+    transform: rotateY(180deg);
 }
 
 .memory-card.matched {
     background: linear-gradient(135deg, var(--very-light-green) 0%, var(--pastel-yellow) 100%);
     cursor: default;
-    opacity: 0.7;
+    opacity: 0.6;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
 .score {
     text-align: center;
     font-size: 1.2rem;
-    font-weight: bold;
+    font-weight: 700;
     color: var(--dark-green);
-    margin: 1rem 0;
+    margin: 1.5rem 0;
+    padding: 1rem;
+    background: var(--very-light-green);
+    border-radius: 8px;
 }
 
 .rotation-game {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 1rem;
-    margin: 1.5rem 0;
+    gap: 1.5rem;
+    margin: 2rem 0;
 }
 
 .season-slot {
-    background: linear-gradient(135deg, var(--very-light-green) 0%, var(--pastel-yellow) 100%);
-    border: 2px dashed var(--medium-green);
-    border-radius: 8px;
-    padding: 1rem;
+    background: linear-gradient(135deg, var(--very-light-green) 0%, #e8f5e9 100%);
+    border: 3px dashed var(--light-green);
+    border-radius: 12px;
+    padding: 1.5rem;
     text-align: center;
-    min-height: 120px;
+    min-height: 140px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.season-slot:hover {
+    border-color: var(--medium-green);
+    background: linear-gradient(135deg, #d8f3dc 0%, #c8e6c9 100%);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
 }
 
 .season-title {
-    font-weight: bold;
+    font-weight: 700;
     color: var(--dark-green);
-    margin-bottom: 0.5rem;
-    font-size: 1.1rem;
+    margin-bottom: 0.8rem;
+    font-size: 1.2rem;
 }
 
 .crop-item {
     background: linear-gradient(135deg, var(--light-green) 0%, var(--medium-green) 100%);
     color: var(--white);
-    padding: 0.8rem;
-    margin: 0.3rem;
-    border-radius: 6px;
-    cursor: move;
+    padding: 1rem;
+    margin: 0.4rem;
+    border-radius: 8px;
+    cursor: pointer;
     user-select: none;
     display: inline-block;
-    font-weight: bold;
+    font-weight: 600;
     transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    border: 3px solid transparent;
 }
 
 .crop-item:hover {
     transform: scale(1.1);
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
 }
 
 .crop-item.placed {
-    background: linear-gradient(135deg, var(--pastel-yellow) 0%, var(--very-light-green) 100%);
+    background: linear-gradient(135deg, var(--pastel-yellow) 0%, var(--vibrant-yellow) 100%);
     color: var(--dark-green);
     cursor: default;
+    opacity: 0.7;
 }
 
 .crops-available {
-    background-color: var(--light-gray);
-    padding: 1rem;
-    border-radius: 8px;
-    margin-top: 1rem;
+    background: linear-gradient(135deg, var(--light-gray) 0%, #f5f5f5 100%);
+    padding: 1.5rem;
+    border-radius: 10px;
+    margin-top: 1.5rem;
     text-align: center;
+    border: 2px solid var(--light-green);
 }
 
 .crops-available h4 {
     color: var(--dark-green);
-    margin-bottom: 0.5rem;
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+}
+
+.button-group {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.btn-reset {
+    background: var(--light-green);
+    color: var(--white);
+    border: none;
+    padding: 0.9rem 1.8rem;
+    font-size: 1rem;
+    font-weight: 700;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    flex: 1;
+    min-width: 150px;
+}
+
+.btn-reset:hover {
+    background: var(--medium-green);
+    transform: scale(1.05);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.btn-reset.secondary {
+    background: var(--accent-orange);
+}
+
+.btn-reset.secondary:hover {
+    background: #ff5722;
 }
 
 .footer {
-    background-color: var(--dark-green);
+    background: linear-gradient(135deg, var(--dark-green) 0%, var(--medium-green) 100%);
     color: var(--white);
-    text-align: center;
-    padding: 2rem 1rem;
-    margin-top: 3rem;
+    padding: 3rem 1rem 1.5rem;
+    margin-top: 4rem;
+    box-shadow: 0 -4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.footer-content {
+    max-width: 1000px;
+    margin: 0 auto 2rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.footer-section h4 {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    color: var(--pastel-yellow);
+}
+
+.footer-section p {
     font-size: 0.95rem;
+    line-height: 1.8;
+}
+
+.contact-info a {
+    color: var(--pastel-yellow);
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.contact-info a:hover {
+    text-decoration: underline;
+    color: var(--vibrant-yellow);
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    font-size: 0.9rem;
 }
 
 @media (max-width: 768px) {
-    .header h1 {
-        font-size: 1.8rem;
-    }
-
-    .header p {
-        font-size: 0.95rem;
+    .main-title {
+        font-size: 2rem;
     }
 
     .article h2 {
-        font-size: 1.4rem;
+        font-size: 1.5rem;
     }
 
     .practices-grid {
@@ -429,6 +981,20 @@ body {
     .modal-content {
         width: 95%;
         margin: 20% auto;
+        padding: 1.5rem;
+    }
+
+    .rotation-game {
+        grid-template-columns: 1fr;
+    }
+
+    .article-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .guide-card {
+        padding-top: 2.5rem;
     }
 }
 
@@ -437,7 +1003,7 @@ body {
         padding: 2rem 0.5rem;
     }
 
-    .header h1 {
+    .main-title {
         font-size: 1.5rem;
     }
 
@@ -451,9 +1017,40 @@ body {
 
     .memory-game {
         grid-template-columns: repeat(2, 1fr);
+        gap: 0.8rem;
     }
 
-    .rotation-game {
+    .memory-card {
+        font-size: 1.8rem;
+    }
+
+    .difficulty-selector {
+        flex-direction: column;
+    }
+
+    .difficulty-btn {
+        width: 100%;
+    }
+
+    .button-group {
+        flex-direction: column;
+    }
+
+    .btn-reset {
+        width: 100%;
+    }
+
+    .footer-content {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .games-guide {
+        grid-template-columns: 1fr;
+    }
+
+    .tips-grid {
         grid-template-columns: 1fr;
     }
 }
+Como Criar um Jogo em um Site com HTML, CSS e JavaScript - Manus
