@@ -1,21 +1,3 @@
-
-const seasons = [
-    { name: 'Primavera', id: 'spring' },
-    { name: 'Verão', id: 'summer' },
-    { name: 'Outono', id: 'autumn' },
-    { name: 'Inverno', id: 'winter' }
-];
-
-const allCrops = [
-    { name: 'Milho', season: 'spring', 
-
-
-GitHub
-
-Computadores na nuvem
-Novo
-
-rotation.js
 const seasons = [
     { name: 'Primavera', id: 'spring' },
     { name: 'Verão', id: 'summer' },
@@ -92,8 +74,8 @@ function initRotation() {
 }
 
 function selectCrop(element, cropName) {
-    const allCrops = document.querySelectorAll('.crop-item');
-    allCrops.forEach(crop => crop.style.border = 'none');
+    const allCropsElements = document.querySelectorAll('.crop-item');
+    allCropsElements.forEach(crop => crop.style.border = 'none');
     
     if (rotationState.selectedCrop === cropName) {
         rotationState.selectedCrop = null;
@@ -129,14 +111,15 @@ function placeCrop(seasonId) {
         const remainingCrops = document.querySelectorAll('.crop-item:not(.placed)').length;
         if (remainingCrops === 1) {
             setTimeout(() => {
-                alert(`🎉 Perfeito! Você acertou a rotação!\nPontuação: ${rotationState.score}`);
+                const message = `🎉 Perfeito! Você acertou a rotação!\nPontuação: ${rotationState.score}`;
+                alert(message);
             }, 300);
         }
     } else {
         alert('❌ Essa cultura não é ideal para essa estação!');
         rotationState.selectedCrop = null;
-        const allCrops = document.querySelectorAll('.crop-item');
-        allCrops.forEach(crop => crop.style.border = 'none');
+        const allCropsElements = document.querySelectorAll('.crop-item');
+        allCropsElements.forEach(crop => crop.style.border = 'none');
     }
 
     updateRotationScore();
@@ -179,7 +162,9 @@ function setDifficulty(level) {
     currentDifficulty = level;
     const buttons = document.querySelectorAll('.difficulty-btn');
     buttons.forEach(btn => btn.classList.remove('active'));
-    event.target.classList.add('active');
+    if (event && event.target) {
+        event.target.classList.add('active');
+    }
 }
 
 window.addEventListener('click', (event) => {
@@ -188,4 +173,3 @@ window.addEventListener('click', (event) => {
         closeRotationGame();
     }
 });
-Como Criar um Jogo em um Site com HTML, CSS e JavaScript - Manus
