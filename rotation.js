@@ -13,14 +13,16 @@ const crops = [
 ];
 
 let rotationState = {
-    selectedCrops: [],
-    score: 0
+    placed: {},
+    score: 0,
+    selectedCrop: null
 };
 
 function initRotation() {
     rotationState = {
-        selectedCrops: [],
-        score: 0
+        placed: {},
+        score: 0,
+        selectedCrop: null
     };
 
     const container = document.getElementById('rotationGame');
@@ -31,55 +33,75 @@ function initRotation() {
         slot.className = 'season-slot';
         slot.id = season.id;
         slot.innerHTML = `<div class="season-title">${season.name}</div>`;
-        slot.addEventListener('drop', (e) => dropCrop(e, season.id));
-        slot.addEventListener('dragover', (e) => e.preventDefault());
+        slot.addEventListener('click', () => placeCrop(season.id));
         container.appendChild(slot);
     });
 
     const available = document.createElement('div');
     available.className = 'crops-available';
-    available.innerHTML = '<h4>Culturas Disponíveis</h4>';
+    available.innerHTML = '<h4>Clique em uma cultura e depois na estação</h4>';
 
     crops.forEach(crop => {
         const item = document.createElement('div');
         item.className = 'crop-item';
-        item.draggable = true;
+        item.id = 'crop-' + crop.name;
         item.innerHTML = `${crop.emoji} ${crop.name}`;
         item.dataset.crop = crop.name;
         item.dataset.season = crop.season;
-        item.addEventListener('dragstart', (e) => e.dataTransfer.effectAllowed = 'move');
+        item.addEventListener('click', () => selectCrop(item, crop.name));
         available.appendChild(item);
     });
 
     container.appendChild(available);
-
     updateRotationScore();
 }
 
-function dropCrop(event, seasonId) {
-    event.preventDefault();
+function selectCrop(element, cropName) {
+    const allCrops = document.querySelectorAll('.crop-item');
+    allCrops.forEach(crop => crop.style.border = 'none');
     
-    const item = document.querySelector(`[data-crop][data-season]`);
-    
-    if (!item) return;
+    if (rotationState.selectedCrop === cropName) {
+        rotationState.selectedCrop = null;
+    } else {
+        element.style.border = '3px solid #2d5016';
+        rotationState.selectedCrop = cropName;
+    }
+}
 
-    const isCorrect = item.dataset.season === seasonId;
+function placeCrop(seasonId) {
+    if (!rotationState.selectedCrop) {
+        alert('Selecione uma cultura primeiro!');
+        return;
+    }
 
-    if (isCorrect) {
-        const copy = item.cloneNode(true);
-        copy.classList.add('placed');
-        copy.draggable = false;
-        document.getElementById(seasonId).appendChild(copy);
-        item.remove();
-        rotationState.score += 25;
+    const cropElement = document.getElementById('crop-' + rotationState.selectedCrop);
+    const correctSeason = cropElement.dataset.season;
+
+    if (correctSeason === seasonId) {
+        cropElement.classList.add('placed');
+        cropElement.style.pointerEvents = 'none';
+        cropElement.style.opacity = '0.5';
         
-        if (document.querySelectorAll('.crop-item:not(.placed)').length === 0) {
+        const slot = document.getElementById(seasonId);
+        const placed = document.createElement('div');
+        placed.className = 'crop-item placed';
+        placed.innerHTML = cropElement.innerHTML;
+        slot.appendChild(placed);
+
+        rotationState.score += 25;
+        rotationState.selectedCrop = null;
+
+        const remainingCrops = document.querySelectorAll('.crop-item:not(.placed)').length;
+        if (remainingCrops === 1) {
             setTimeout(() => {
                 alert(`🎉 Perfeito! Você acertou a rotação!\nPontuação: ${rotationState.score}`);
             }, 300);
         }
     } else {
         alert('❌ Essa cultura não é ideal para essa estação!');
+        rotationState.selectedCrop = null;
+        const allCrops = document.querySelectorAll('.crop-item');
+        allCrops.forEach(crop => crop.style.border = 'none');
     }
 
     updateRotationScore();
