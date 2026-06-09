@@ -1,21 +1,3 @@
-
-const seasons = [
-    { name: 'Primavera', id: 'spring' },
-    { name: 'Verão', id: 'summer' },
-    { name: 'Outono', id: 'autumn' },
-    { name: 'Inverno', id: 'winter' }
-];
-
-const allCrops = [
-    { name: 'Milho', season: 'spring', 
-
-
-GitHub
-
-Computadores na nuvem
-Novo
-
-memory.js
 const cardsData = [
     { id: 1, emoji: '🌾' },
     { id: 2, emoji: '💧' },
@@ -115,7 +97,8 @@ function checkMatch() {
 
         if (memoryState.matched.length === memoryState.cards.length) {
             setTimeout(() => {
-                alert(`🎉 Parabéns! Você venceu em ${memoryState.moves} movimentos!\nPontuação: ${memoryState.score}`);
+                const message = `🎉 Parabéns! Você venceu em ${memoryState.moves} movimentos!\nPontuação: ${memoryState.score}`;
+                alert(message);
             }, 500);
         }
     } else {
@@ -169,7 +152,9 @@ function setDifficulty(level) {
     currentDifficulty = level;
     const buttons = document.querySelectorAll('.difficulty-btn');
     buttons.forEach(btn => btn.classList.remove('active'));
-    event.target.classList.add('active');
+    if (event && event.target) {
+        event.target.classList.add('active');
+    }
 }
 
 window.addEventListener('click', (event) => {
@@ -178,4 +163,3 @@ window.addEventListener('click', (event) => {
         closeMemoryGame();
     }
 });
-Como Criar um Jogo em um Site com HTML, CSS e JavaScript - Manus
