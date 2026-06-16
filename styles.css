@@ -11,6 +11,8 @@
     --dark-text: #1a1a1a;
     --accent-blue: #0096ff;
     --accent-orange: #ff6b35;
+    --accent-purple: #9d4edd;
+    --accent-pink: #ff006e;
 }
 
 * {
@@ -146,6 +148,12 @@ body {
     display: inline-block;
 }
 
+.article h3 {
+    color: var(--medium-green);
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
 .date {
     background: var(--pastel-yellow);
     color: var(--dark-green);
@@ -170,6 +178,16 @@ body {
 
 .article.highlight h2 {
     color: var(--dark-green);
+}
+
+.highlight-box {
+    background: linear-gradient(135deg, var(--accent-blue) 0%, var(--light-green) 100%);
+    color: var(--white);
+    padding: 1.5rem;
+    border-radius: 10px;
+    margin-top: 1rem;
+    font-weight: 600;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 .practices-grid {
@@ -277,6 +295,49 @@ body {
     font-weight: 600;
 }
 
+.news-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.news-card {
+    background: linear-gradient(135deg, var(--accent-blue) 0%, var(--accent-purple) 100%);
+    color: var(--white);
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.news-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.news-date {
+    background: rgba(255, 255, 255, 0.2);
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    display: inline-block;
+    margin-bottom: 0.8rem;
+}
+
+.news-card h4 {
+    font-size: 1.1rem;
+    margin-bottom: 0.8rem;
+    font-weight: 700;
+}
+
+.news-card p {
+    font-size: 0.9rem;
+    margin: 0;
+}
+
 .games-guide {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -364,6 +425,14 @@ body {
     min-width: 100px;
 }
 
+.game-detail-box {
+    background: linear-gradient(135deg, var(--very-light-green) 0%, #f0fdf4 100%);
+    padding: 1.5rem;
+    border-radius: 10px;
+    margin-bottom: 1.5rem;
+    border-left: 5px solid var(--light-green);
+}
+
 .tips-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -425,6 +494,38 @@ body {
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
+.resources-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.resource-card {
+    background: linear-gradient(135deg, var(--accent-pink) 0%, var(--accent-orange) 100%);
+    color: var(--white);
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.resource-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.resource-card h4 {
+    font-size: 1.1rem;
+    margin-bottom: 0.8rem;
+    font-weight: 700;
+}
+
+.resource-card p {
+    font-size: 0.9rem;
+    margin: 0;
+}
+
 .games-section {
     background: var(--white);
     padding: 3rem;
@@ -440,6 +541,15 @@ body {
     border-bottom: 3px solid var(--pastel-yellow);
     padding-bottom: 0.8rem;
     display: inline-block;
+}
+
+.games-title {
+    color: var(--dark-green);
+    font-size: 1.5rem;
+    margin-top: 2rem;
+    margin-bottom: 1.5rem;
+    border-bottom: 2px solid var(--light-green);
+    padding-bottom: 0.5rem;
 }
 
 .games-intro {
@@ -496,6 +606,18 @@ body {
     transition: all 0.3s ease;
     position: relative;
     overflow: hidden;
+}
+
+.game-card:nth-child(2) {
+    background: linear-gradient(135deg, var(--accent-blue) 0%, var(--medium-green) 100%);
+}
+
+.game-card:nth-child(3) {
+    background: linear-gradient(135deg, var(--accent-purple) 0%, var(--accent-blue) 100%);
+}
+
+.game-card:nth-child(4) {
+    background: linear-gradient(135deg, var(--accent-orange) 0%, var(--accent-pink) 100%);
 }
 
 .game-card::before {
@@ -799,6 +921,104 @@ body {
     font-size: 1.1rem;
 }
 
+.quiz-game {
+    margin: 2rem 0;
+}
+
+.quiz-question {
+    background: linear-gradient(135deg, var(--very-light-green) 0%, #f0fdf4 100%);
+    padding: 2rem;
+    border-radius: 10px;
+    margin-bottom: 1.5rem;
+    border-left: 5px solid var(--light-green);
+}
+
+.quiz-question h4 {
+    color: var(--dark-green);
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+    font-weight: 700;
+}
+
+.quiz-options {
+    display: grid;
+    gap: 1rem;
+}
+
+.quiz-option {
+    background: var(--white);
+    border: 2px solid var(--light-green);
+    padding: 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 600;
+    color: var(--dark-green);
+}
+
+.quiz-option:hover {
+    background: var(--light-green);
+    color: var(--white);
+    transform: translateX(5px);
+}
+
+.quiz-option.selected {
+    background: var(--light-green);
+    color: var(--white);
+    border-color: var(--dark-green);
+}
+
+.quiz-option.correct {
+    background: #4caf50;
+    color: var(--white);
+    border-color: #4caf50;
+}
+
+.quiz-option.incorrect {
+    background: #f44336;
+    color: var(--white);
+    border-color: #f44336;
+}
+
+.clicker-game {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+.clicker-button {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: none;
+    background: linear-gradient(135deg, var(--light-green) 0%, var(--medium-green) 100%);
+    color: var(--white);
+    font-size: 3rem;
+    cursor: pointer;
+    transition: all 0.1s ease;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    font-weight: 700;
+}
+
+.clicker-button:hover {
+    transform: scale(1.1);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
+}
+
+.clicker-button:active {
+    transform: scale(0.95);
+}
+
+.clicker-timer {
+    font-size: 2rem;
+    font-weight: 900;
+    color: var(--light-green);
+    text-align: center;
+}
+
 .button-group {
     display: flex;
     gap: 1rem;
@@ -974,5 +1194,11 @@ body {
 
     .tips-grid {
         grid-template-columns: 1fr;
+    }
+
+    .clicker-button {
+        width: 120px;
+        height: 120px;
+        font-size: 2.5rem;
     }
 }

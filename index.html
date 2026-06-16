@@ -21,8 +21,11 @@
                 <h2>🎮 Bem-vindo ao Projeto</h2>
                 <span class="date">2025</span>
             </div>
-            <p>Este é um projeto educativo interativo sobre agronegócio sustentável. Aqui você encontrará informações importantes sobre práticas agrícolas responsáveis e dois jogos divertidos para testar seus conhecimentos!</p>
-            <p><strong>Objetivo:</strong> Conscientizar sobre a importância do equilíbrio entre produção agrícola e preservação ambiental.</p>
+            <p>Este é um projeto educativo interativo sobre agronegócio sustentável. Aqui você encontrará informações importantes sobre práticas agrícolas responsáveis e vários jogos divertidos para testar seus conhecimentos!</p>
+            <p><strong>Objetivo:</strong> Conscientizar sobre a importância do equilíbrio entre produção agrícola e preservação ambiental, promovendo aprendizado através de gamificação.</p>
+            <div class="highlight-box">
+                <p>🎯 <strong>Missão:</strong> Transformar o conhecimento sobre sustentabilidade em diversão e engajamento!</p>
+            </div>
         </section>
 
         <section class="article">
@@ -85,7 +88,28 @@
                     <div class="stat-label">Valor de Mercado</div>
                 </div>
             </div>
-            <p>Propriedades rurais que adotam práticas sustentáveis apresentam maior rentabilidade a longo prazo, melhor qualidade de produtos e acesso a mercados premium.</p>
+            <p>Propriedades rurais que adotam práticas sustentáveis apresentam maior rentabilidade a longo prazo, melhor qualidade de produtos e acesso a mercados premium que pagam mais pelos produtos certificados.</p>
+        </section>
+
+        <section class="article">
+            <h2>📰 Notícias e Tendências do Setor</h2>
+            <div class="news-grid">
+                <div class="news-card">
+                    <div class="news-date">2025</div>
+                    <h4>Crescimento do Agronegócio Sustentável</h4>
+                    <p>Mercado de alimentos sustentáveis cresce 25% ao ano, impulsionado pela demanda de consumidores conscientes.</p>
+                </div>
+                <div class="news-card">
+                    <div class="news-date">2025</div>
+                    <h4>Tecnologia Verde na Agricultura</h4>
+                    <p>Startups de agritech desenvolvem soluções inovadoras para monitorar saúde do solo e otimizar recursos.</p>
+                </div>
+                <div class="news-card">
+                    <div class="news-date">2025</div>
+                    <h4>Certificações Sustentáveis</h4>
+                    <p>Certificações ambientais aumentam valor dos produtos em até 40% no mercado internacional.</p>
+                </div>
+            </div>
         </section>
 
         <section class="article">
@@ -99,7 +123,7 @@
                 <div class="guide-card">
                     <div class="guide-number">2</div>
                     <h4>Clique no Jogo</h4>
-                    <p>Escolha entre Memória Agro ou Rotação de Culturas.</p>
+                    <p>Escolha entre os 4 jogos disponíveis.</p>
                 </div>
                 <div class="guide-card">
                     <div class="guide-number">3</div>
@@ -114,55 +138,9 @@
             </div>
         </section>
 
-        <section class="article">
-            <h2>🧠 Jogo da Memória Agro</h2>
-            <div class="game-info">
-                <p><strong>Como funciona:</strong> Encontre pares de práticas sustentáveis clicando nas cartas. Quanto menos movimentos, melhor sua pontuação!</p>
-                <div class="game-details">
-                    <div class="detail-item">
-                        <span class="detail-label">🟢 Fácil:</span>
-                        <span>8 cartas (4 pares) - Perfeito para iniciantes</span>
-                    </div>
-                    <div class="detail-item">
-                        <span class="detail-label">🟡 Médio:</span>
-                        <span>12 cartas (6 pares) - Desafio moderado</span>
-                    </div>
-                    <div class="detail-item">
-                        <span class="detail-label">🔴 Difícil:</span>
-                        <span>16 cartas (8 pares) - Para especialistas</span>
-                    </div>
-                </div>
-                <p><strong>Objetivo:</strong> Completar o jogo em menos movimentos possível e ganhar pontos!</p>
-                <button class="btn-game" onclick="openMemoryGame()">🎮 Jogar Memória</button>
-            </div>
-        </section>
-
-        <section class="article">
-            <h2>🌱 Rotação de Culturas</h2>
-            <div class="game-info">
-                <p><strong>Como funciona:</strong> Clique em uma cultura para selecioná-la e depois clique na estação correta. Acerte para ganhar pontos!</p>
-                <div class="game-details">
-                    <div class="detail-item">
-                        <span class="detail-label">🟢 Fácil:</span>
-                        <span>4 culturas - Uma por estação</span>
-                    </div>
-                    <div class="detail-item">
-                        <span class="detail-label">🟡 Médio:</span>
-                        <span>6 culturas - Múltiplas opções</span>
-                    </div>
-                    <div class="detail-item">
-                        <span class="detail-label">🔴 Difícil:</span>
-                        <span>8 culturas - Máximo desafio</span>
-                    </div>
-                </div>
-                <p><strong>Dica:</strong> Cada cultura tem uma estação ideal. Acerte para ganhar 25 pontos!</p>
-                <button class="btn-game" onclick="openRotationGame()">🎮 Jogar Rotação</button>
-            </div>
-        </section>
-
         <section class="games-section">
-            <h2>🎮 Comece a Jogar!</h2>
-            <p class="games-intro">Escolha o nível de dificuldade e teste seus conhecimentos:</p>
+            <h2>🎮 Escolha o Nível de Dificuldade</h2>
+            <p class="games-intro">Selecione o nível desejado e comece a jogar:</p>
             
             <div class="difficulty-selector">
                 <button class="difficulty-btn active" onclick="setDifficulty('easy')">🟢 Fácil</button>
@@ -170,13 +148,14 @@
                 <button class="difficulty-btn" onclick="setDifficulty('hard')">🔴 Difícil</button>
             </div>
 
+            <h3 class="games-title">Todos os Jogos</h3>
             <div class="games-container">
                 <div class="game-card">
                     <div class="game-header">
-                        <h3>🧠 Jogo da Memória Agro</h3>
+                        <h3>🧠 Memória Agro</h3>
                         <span class="game-badge">Memorização</span>
                     </div>
-                    <p>Encontre pares de práticas sustentáveis. Teste sua memória e conhecimento!</p>
+                    <p>Encontre pares de práticas sustentáveis clicando nas cartas. Quanto menos movimentos, melhor sua pontuação!</p>
                     <div class="game-features">
                         <span>⏱️ Contra o tempo</span>
                         <span>🏆 Pontuação</span>
@@ -198,6 +177,118 @@
                     </div>
                     <button class="btn-game" onclick="openRotationGame()">🎮 Jogar Rotação</button>
                 </div>
+
+                <div class="game-card">
+                    <div class="game-header">
+                        <h3>❓ Quiz Sustentável</h3>
+                        <span class="game-badge">Conhecimento</span>
+                    </div>
+                    <p>Responda perguntas sobre práticas sustentáveis e ganhe pontos por acertos!</p>
+                    <div class="game-features">
+                        <span>📚 Educativo</span>
+                        <span>🏆 Pontuação</span>
+                        <span>🎯 3 Níveis</span>
+                    </div>
+                    <button class="btn-game" onclick="openQuizGame()">🎮 Jogar Quiz</button>
+                </div>
+
+                <div class="game-card">
+                    <div class="game-header">
+                        <h3>🌾 Clicker Fazenda</h3>
+                        <span class="game-badge">Ação</span>
+                    </div>
+                    <p>Clique para colher culturas mantendo o equilíbrio ambiental!</p>
+                    <div class="game-features">
+                        <span>⚡ Rápido</span>
+                        <span>🏆 Pontuação</span>
+                        <span>🎯 3 Níveis</span>
+                    </div>
+                    <button class="btn-game" onclick="openClickerGame()">🎮 Jogar Clicker</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="article">
+            <h2>🎮 Descrição Detalhada dos Jogos</h2>
+            
+            <div class="game-detail-box">
+                <h3>🧠 Jogo da Memória Agro</h3>
+                <p><strong>Como funciona:</strong> Encontre pares de práticas sustentáveis clicando nas cartas. Quanto menos movimentos, melhor sua pontuação!</p>
+                <div class="game-details">
+                    <div class="detail-item">
+                        <span class="detail-label">🟢 Fácil:</span>
+                        <span>8 cartas (4 pares) - Perfeito para iniciantes</span>
+                    </div>
+                    <div class="detail-item">
+                        <span class="detail-label">🟡 Médio:</span>
+                        <span>12 cartas (6 pares) - Desafio moderado</span>
+                    </div>
+                    <div class="detail-item">
+                        <span class="detail-label">🔴 Difícil:</span>
+                        <span>16 cartas (8 pares) - Para especialistas</span>
+                    </div>
+                </div>
+                <p><strong>Objetivo:</strong> Completar o jogo em menos movimentos possível e ganhar pontos!</p>
+            </div>
+
+            <div class="game-detail-box">
+                <h3>🌱 Rotação de Culturas</h3>
+                <p><strong>Como funciona:</strong> Clique em uma cultura para selecioná-la e depois clique na estação correta. Acerte para ganhar pontos!</p>
+                <div class="game-details">
+                    <div class="detail-item">
+                        <span class="detail-label">🟢 Fácil:</span>
+                        <span>4 culturas - Uma por estação</span>
+                    </div>
+                    <div class="detail-item">
+                        <span class="detail-label">🟡 Médio:</span>
+                        <span>6 culturas - Múltiplas opções</span>
+                    </div>
+                    <div class="detail-item">
+                        <span class="detail-label">🔴 Difícil:</span>
+                        <span>8 culturas - Máximo desafio</span>
+                    </div>
+                </div>
+                <p><strong>Dica:</strong> Cada cultura tem uma estação ideal. Acerte para ganhar 25 pontos!</p>
+            </div>
+
+            <div class="game-detail-box">
+                <h3>❓ Quiz Sustentável</h3>
+                <p><strong>Como funciona:</strong> Responda perguntas sobre práticas sustentáveis e ganhe pontos por acertos!</p>
+                <div class="game-details">
+                    <div class="detail-item">
+                        <span class="detail-label">🟢 Fácil:</span>
+                        <span>5 perguntas - Básico</span>
+                    </div>
+                    <div class="detail-item">
+                        <span class="detail-label">🟡 Médio:</span>
+                        <span>8 perguntas - Intermediário</span>
+                    </div>
+                    <div class="detail-item">
+                        <span class="detail-label">🔴 Difícil:</span>
+                        <span>10 perguntas - Avançado</span>
+                    </div>
+                </div>
+                <p><strong>Objetivo:</strong> Acerte o máximo de perguntas e ganhe 10 pontos por acerto!</p>
+            </div>
+
+            <div class="game-detail-box">
+                <h3>🌾 Clicker Fazenda</h3>
+                <p><strong>Como funciona:</strong> Clique para colher culturas mantendo o equilíbrio ambiental!</p>
+                <div class="game-details">
+                    <div class="detail-item">
+                        <span class="detail-label">🟢 Fácil:</span>
+                        <span>30 segundos - Sem pressão</span>
+                    </div>
+                    <div class="detail-item">
+                        <span class="detail-label">🟡 Médio:</span>
+                        <span>20 segundos - Moderado</span>
+                    </div>
+                    <div class="detail-item">
+                        <span class="detail-label">🔴 Difícil:</span>
+                        <span>10 segundos - Máxima velocidade</span>
+                    </div>
+                </div>
+                <p><strong>Objetivo:</strong> Colha o máximo de culturas no tempo disponível!</p>
             </div>
         </section>
 
@@ -213,6 +304,14 @@
                     <p>Na rotação de culturas, pense sobre qual estação é ideal para cada planta.</p>
                 </div>
                 <div class="tip-card">
+                    <h4>📚 Estude Antes</h4>
+                    <p>Leia as informações sobre sustentabilidade antes de jogar o quiz.</p>
+                </div>
+                <div class="tip-card">
+                    <h4>⚡ Seja Rápido</h4>
+                    <p>No clicker, quanto mais rápido clicar, mais pontos você ganha!</p>
+                </div>
+                <div class="tip-card">
                     <h4>🎯 Desafie-se</h4>
                     <p>Comece no nível fácil e vá aumentando a dificuldade gradualmente.</p>
                 </div>
@@ -226,12 +325,32 @@
         <section class="article highlight">
             <h2>🌍 Por Que Sustentabilidade Importa?</h2>
             <div class="action-box">
-                <p>A sustentabilidade no agronegócio não é apenas uma tendência, é uma necessidade. O planeta precisa de produção responsável para garantir alimento para as futuras gerações.</p>
+                <p>A sustentabilidade no agronegócio não é apenas uma tendência, é uma necessidade. O planeta precisa de produção responsável para garantir alimento para as futuras gerações. Cada decisão que tomamos hoje impacta o futuro do nosso planeta.</p>
                 <div class="action-items">
                     <div class="action-item">🌱 Preserva o solo</div>
                     <div class="action-item">💧 Conserva água</div>
                     <div class="action-item">🌍 Reduz emissões</div>
                     <div class="action-item">💰 Gera lucro</div>
+                    <div class="action-item">🌳 Aumenta biodiversidade</div>
+                    <div class="action-item">👨‍🌾 Beneficia produtores</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="article">
+            <h2>🔗 Referências e Recursos</h2>
+            <div class="resources-grid">
+                <div class="resource-card">
+                    <h4>📖 Artigos Científicos</h4>
+                    <p>Pesquisas comprovam que práticas sustentáveis aumentam a produtividade em até 30%.</p>
+                </div>
+                <div class="resource-card">
+                    <h4>🌐 Organizações Internacionais</h4>
+                    <p>ONU, FAO e UNEP promovem agricultura sustentável globalmente.</p>
+                </div>
+                <div class="resource-card">
+                    <h4>📊 Dados Estatísticos</h4>
+                    <p>Mercado de alimentos orgânicos cresce 15% ao ano mundialmente.</p>
                 </div>
             </div>
         </section>
@@ -250,7 +369,7 @@
             </div>
             <div class="footer-section">
                 <h4>🎯 Objetivo</h4>
-                <p>Promover conhecimento sobre práticas agrícolas sustentáveis de forma divertida e engajante.</p>
+                <p>Promover conhecimento sobre práticas agrícolas sustentáveis de forma divertida e engajante, transformando educação em gamificação.</p>
             </div>
         </div>
         <div class="footer-bottom">
@@ -290,7 +409,41 @@
         </div>
     </div>
 
+    <div id="quizModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeQuizGame()">&times;</span>
+            <div class="modal-header">
+                <h2>❓ Quiz Sustentável</h2>
+                <div class="difficulty-display" id="quizDifficulty">Nível: Fácil</div>
+            </div>
+            <div id="quizGame" class="quiz-game"></div>
+            <p id="quizScore" class="score">Pontos: 0 | Acertos: 0</p>
+            <div class="button-group">
+                <button class="btn-reset" onclick="resetQuizGame()">🔄 Reiniciar</button>
+                <button class="btn-reset secondary" onclick="closeQuizGame()">❌ Sair</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="clickerModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeClickerGame()">&times;</span>
+            <div class="modal-header">
+                <h2>🌾 Clicker Fazenda</h2>
+                <div class="difficulty-display" id="clickerDifficulty">Nível: Fácil</div>
+            </div>
+            <div id="clickerGame" class="clicker-game"></div>
+            <p id="clickerScore" class="score">Pontos: 0 | Tempo: 30s</p>
+            <div class="button-group">
+                <button class="btn-reset" onclick="resetClickerGame()">🔄 Reiniciar</button>
+                <button class="btn-reset secondary" onclick="closeClickerGame()">❌ Sair</button>
+            </div>
+        </div>
+    </div>
+
     <script src="js/memory.js"></script>
     <script src="js/rotation.js"></script>
+    <script src="js/quiz.js"></script>
+    <script src="js/clicker.js"></script>
 </body>
 </html>
